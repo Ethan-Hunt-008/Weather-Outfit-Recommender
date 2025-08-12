@@ -31,13 +31,15 @@ const WeatherDashboard = () => {
         <ErrorMessage error={error} />
 
         <div className="dashboard-layout">
-          {currentWeather && (
-            <WeatherCard weather={currentWeather} />
-          )}
-          
-          {outfitSuggestion && (
-            <OutfitSuggestion suggestion={outfitSuggestion} />
-          )}
+          <div className="top-section">
+            {currentWeather && (
+              <WeatherCard weather={currentWeather} />
+            )}
+            
+            {outfitSuggestion && (
+              <OutfitSuggestion suggestion={outfitSuggestion} />
+            )}
+          </div>
 
           <SearchHistory
             history={searchHistory}

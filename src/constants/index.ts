@@ -26,5 +26,3 @@ export const APP_CONSTANTS = {
   MSG_RAIN_ADDON: " Don't forget rain protection!",
   MSG_SUN_ADDON: " Perfect for outdoor activities!",
 };
-
-// Removed POPULAR_CITIES - now using real API for city suggestions

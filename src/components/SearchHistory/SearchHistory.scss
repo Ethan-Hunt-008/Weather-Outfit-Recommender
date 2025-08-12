@@ -1,0 +1,35 @@
+.history-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  width: 100%;
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2d3436;
+    font-weight: 600;
+  }
+
+  .history-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    .history-item {
+      background: rgba(116, 185, 255, 0.1);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 0.6rem 1rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #2d3436;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+  }
+}
+

@@ -1,0 +1,40 @@
+.outfit-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  flex: 1;
+  min-width: 300px;
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: #2d3436;
+    font-weight: 600;
+  }
+
+  .outfit-message {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #636e72;
+    line-height: 1.5;
+  }
+
+  .outfit-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    .outfit-item {
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 3px 10px rgba(116, 185, 255, 0.3);
+    }
+  }
+}
+

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
-import WeatherDashboard from './components/WeatherDashboard'
+import WeatherDashboard from './components/WeatherDashboard/WeatherDashboard'
 import './App.scss'
 
 function App() {

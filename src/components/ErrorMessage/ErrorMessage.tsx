@@ -1,5 +1,5 @@
-
-import { APP_CONSTANTS } from '../constants'
+import { APP_CONSTANTS } from '../../constants'
+import './ErrorMessage.scss'
 
 interface ErrorMessageProps {
   error: string
@@ -16,3 +16,4 @@ const ErrorMessage = ({ error }: ErrorMessageProps) => {
 }
 
 export default ErrorMessage
+

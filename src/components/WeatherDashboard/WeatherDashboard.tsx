@@ -1,12 +1,12 @@
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { searchWeather } from '../store/slices/weatherSlice'
-import { clearSearchCity } from '../store/slices/uiSlice'
-import Header from './Header'
-import SearchForm from './SearchForm'
-import ErrorMessage from './ErrorMessage'
-import WeatherCard from './WeatherCard'
-import OutfitSuggestion from './OutfitSuggestion'
-import SearchHistory from './SearchHistory'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { searchWeather } from '../../store/slices/weatherSlice'
+import { clearSearchCity } from '../../store/slices/uiSlice'
+import Header from '../Header/Header'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
+import WeatherCard from '../WeatherCard/WeatherCard'
+import OutfitSuggestion from '../OutfitSuggestion/OutfitSuggestion'
+import SearchHistory from '../SearchHistory/SearchHistory'
+import './WeatherDashboard.scss'
 
 const WeatherDashboard = () => {
   const dispatch = useAppDispatch()
@@ -23,11 +23,9 @@ const WeatherDashboard = () => {
 
   return (
     <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
-      <Header />
+      <Header onSearch={handleSearch} />
 
       <main className="main-content">
-        <SearchForm onSearch={handleSearch} />
-
         <ErrorMessage error={error} />
 
         <div className="dashboard-layout">
@@ -52,3 +50,4 @@ const WeatherDashboard = () => {
 }
 
 export default WeatherDashboard
+

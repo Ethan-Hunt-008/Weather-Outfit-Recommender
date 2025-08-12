@@ -20,5 +20,6 @@ export const APP_CONSTANTS = {
 export const POPULAR_CITIES = [
   'New York', 'London', 'Paris', 'Tokyo', 'Sydney', 'Los Angeles', 'Chicago',
   'Miami', 'Berlin', 'Amsterdam', 'Barcelona', 'Rome', 'Moscow', 'Dubai',
-  'Singapore', 'Hong Kong', 'Toronto', 'Vancouver', 'Montreal', 'Madrid'
+  'Singapore', 'Hong Kong', 'Toronto', 'Vancouver', 'Montreal', 'Mumbai',
+  'Delhi', 'Bangkok', 'Seoul', 'Beijing', 'Madrid', 'Vienna', 'Stockholm' 'Vancouver', 'Montreal', 'Madrid'
 ]

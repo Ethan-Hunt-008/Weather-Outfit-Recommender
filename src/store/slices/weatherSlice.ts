@@ -31,11 +31,34 @@ const initialState: WeatherState = {
   outfitSuggestion: null,
 }
 
+// Valid cities for mock API
+const VALID_CITIES = [
+  'new york', 'london', 'paris', 'tokyo', 'sydney', 'los angeles', 'chicago',
+  'miami', 'berlin', 'amsterdam', 'barcelona', 'rome', 'moscow', 'dubai',
+  'singapore', 'hong kong', 'toronto', 'vancouver', 'montreal', 'mumbai',
+  'delhi', 'bangalore', 'seoul', 'beijing', 'shanghai', 'madrid', 'lisbon',
+  'vienna', 'zurich', 'stockholm', 'oslo', 'copenhagen', 'helsinki', 'prague',
+  'budapest', 'warsaw', 'athens', 'istanbul', 'cairo', 'lagos', 'nairobi',
+  'johannesburg', 'cape town', 'casablanca', 'tunis', 'algiers', 'rabat',
+  'riyadh', 'doha', 'kuwait city', 'manama', 'abu dhabi', 'muscat', 'tehran',
+  'baghdad', 'damascus', 'amman', 'beirut', 'tel aviv', 'jerusalem',
+  'karachi', 'lahore', 'islamabad', 'dhaka', 'colombo', 'kathmandu',
+  'bangkok', 'kuala lumpur', 'jakarta', 'manila', 'ho chi minh city',
+  'hanoi', 'phnom penh', 'yangon', 'vientiane', 'bandar seri begawan'
+]
+
 // Mock weather API function
 const fetchWeatherData = async (city: string): Promise<WeatherData> => {
   await new Promise(resolve => setTimeout(resolve, 1000))
   
-  const cityHash = city.toLowerCase().split('').reduce((a, b) => a + b.charCodeAt(0), 0)
+  const cityLower = city.toLowerCase().trim()
+  
+  // Check if city is valid
+  if (!VALID_CITIES.includes(cityLower)) {
+    throw new Error(`City "${city}" not found. Please check the spelling and try again.`)
+  }
+  
+  const cityHash = cityLower.split('').reduce((a, b) => a + b.charCodeAt(0), 0)
   const conditions = ['sunny', 'cloudy', 'rainy', 'snowy', 'windy']
   const icons = ['☀️', '☁️', '🌧️', '❄️', '💨']
   
@@ -43,10 +66,6 @@ const fetchWeatherData = async (city: string): Promise<WeatherData> => {
   const temperature = Math.floor((cityHash % 35) + 5)
   const windSpeed = Math.floor((cityHash % 20) + 5)
   const humidity = Math.floor((cityHash % 40) + 40)
-
-  if (city.toLowerCase() === 'notfound') {
-    throw new Error('City not found')
-  }
 
   return {
     city: city.charAt(0).toUpperCase() + city.slice(1).toLowerCase(),
@@ -133,6 +152,8 @@ const weatherSlice = createSlice({
       .addCase(searchWeather.rejected, (state, action) => {
         state.loading = false
         state.error = action.error.message || 'Failed to fetch weather data'
+        state.currentWeather = null
+        state.outfitSuggestion = null
       })
   },
 })

@@ -30,19 +30,25 @@ const WeatherDashboard = () => {
 
         <ErrorMessage error={error} />
 
-        {currentWeather && (
-          <div className="weather-container">
-            <WeatherCard weather={currentWeather} />
-            {outfitSuggestion && (
-              <OutfitSuggestion suggestion={outfitSuggestion} />
+        <div className="dashboard-layout">
+          <div className="weather-outfit-section">
+            {currentWeather && (
+              <>
+                <WeatherCard weather={currentWeather} />
+                {outfitSuggestion && (
+                  <OutfitSuggestion suggestion={outfitSuggestion} />
+                )}
+              </>
             )}
           </div>
-        )}
 
-        <SearchHistory
-          history={searchHistory}
-          onCityClick={handleSearch}
-        />
+          <div className="recent-searches-section">
+            <SearchHistory
+              history={searchHistory}
+              onCityClick={handleSearch}
+            />
+          </div>
+        </div>
       </main>
     </div>
   )

@@ -44,6 +44,6 @@ export const POPULAR_CITIES = [
   "Madrid",
   "Vienna",
   "Stockholm",
-  "Montreal",
-  "Madrid",
+  "Oslo",
+  "Copenhagen",
 ];
